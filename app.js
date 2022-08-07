@@ -5,11 +5,24 @@ const server = express();
 
 const { shopsRouter, productsRouter, ordersRouter } = require('./routes');
 
-const { PORT = 4000 } = process.env;
+const {
+  PORT = 4000,
+  WHITE_URL1 = 'https://eliftech-school-delivery-app-eduard-konovka.netlify.app',
+  WHITE_URL2 = 'http://localhost:3000',
+} = process.env;
 
-server.use(
-  cors('https://eliftech-school-delivery-app-eduard-konovka.netlify.app/'),
-);
+const whitelist = [WHITE_URL1, WHITE_URL2];
+const corsOptions = {
+  origin: function (origin, callback) {
+    if (whitelist.indexOf(origin) !== -1) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+};
+
+server.use(cors(corsOptions));
 
 server.use('/shops', shopsRouter);
 server.use('/products', productsRouter);
