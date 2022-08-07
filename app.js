@@ -1,15 +1,18 @@
 const express = require('express');
+const logger = require('morgan');
 const cors = require('cors');
-
-const server = express();
 
 const { shopsRouter, productsRouter, ordersRouter } = require('./routes');
 
 const {
-  PORT = 4000,
   WHITE_URL1 = 'https://eliftech-school-delivery-app-eduard-konovka.netlify.app',
   WHITE_URL2 = 'http://localhost:3000',
 } = process.env;
+
+const server = express();
+
+const formatsLogger = server.get('env') === 'development' ? 'dev' : 'short';
+server.use(logger(formatsLogger));
 
 const whitelist = [WHITE_URL1, WHITE_URL2];
 const corsOptions = {
@@ -19,12 +22,11 @@ const corsOptions = {
       : callback(new Error('Not allowed by CORS'));
   },
 };
+server.use(server.get('env') === 'development' ? cors() : cors(corsOptions));
 
-server.use(cors(corsOptions));
-
-server.use('/shops', shopsRouter);
-server.use('/products', productsRouter);
-server.use('/orders', ordersRouter);
+server.use('/api/shops', shopsRouter);
+server.use('/api/products', productsRouter);
+server.use('/api/orders', ordersRouter);
 
 server.use((req, res, next) => {
   res.status(404).json({
@@ -32,6 +34,4 @@ server.use((req, res, next) => {
   });
 });
 
-server.listen(PORT, () => {
-  console.log(`Server running. Use our API on port: ${PORT}`);
-});
+module.exports = server;
