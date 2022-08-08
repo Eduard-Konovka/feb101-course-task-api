@@ -24,14 +24,29 @@ const corsOptions = {
 };
 server.use(server.get('env') === 'development' ? cors() : cors(corsOptions));
 
+server.use(express.json());
+
 server.use('/api/shops', shopsRouter);
 server.use('/api/products', productsRouter);
 server.use('/api/orders', ordersRouter);
 
-server.use((req, res, next) => {
+server.use((req, res) => {
   res.status(404).json({
-    message: 'Not found',
+    message: 'This address or route was not found',
   });
+});
+
+server.use((err, req, res, next) => {
+  const {
+    status = 500,
+    message = `Server error. ${err.message}. Please try again later`,
+  } = err;
+
+  res.status(status).json({
+    message,
+  });
+
+  console.log(`\n${message}\n`);
 });
 
 module.exports = server;
