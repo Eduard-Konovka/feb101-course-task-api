@@ -2,16 +2,9 @@ const express = require('express');
 
 const router = express.Router();
 
-const { shops } = require('../models');
+const { ctrlWrapper } = require('../middlewares');
+const { shops: ctrl } = require('../controllers');
 
-// GET /api/shops
-router.get('/', async (req, res, next) => {
-  try {
-    const result = await shops.listShops();
-    res.json(result);
-  } catch (error) {
-    next(error);
-  }
-});
+router.get('/', ctrlWrapper(ctrl.getListShops));
 
 module.exports = router;

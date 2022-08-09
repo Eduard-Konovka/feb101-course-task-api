@@ -3,19 +3,19 @@ const path = require('path');
 
 const db = path.join(__dirname, '../db/db.json');
 
-async function addOrders(reqBody) {
+async function addOrder(reqBody) {
   const data = await fs.readFile(db);
   const dataBase = JSON.parse(data);
 
   dataBase.orders.push(reqBody);
-  await sendOrders(dataBase);
+  await sendOrder(dataBase);
   return reqBody;
 }
 
-const sendOrders = async newDataBase => {
+const sendOrder = async newDataBase => {
   await fs.writeFile(db, JSON.stringify(newDataBase));
 };
 
 module.exports = {
-  addOrders,
+  addOrder,
 };
