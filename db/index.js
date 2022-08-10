@@ -1,6 +1,6 @@
-const orders = require('./orders');
-const products = require('./products');
-const shops = require('./shops');
+const orders = require('./orders.json');
+const products = require('./products.json');
+const shops = require('./shops.json');
 
 module.exports = {
   orders,

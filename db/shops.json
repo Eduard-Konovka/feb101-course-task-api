@@ -1,0 +1,22 @@
+[
+  {
+    "title": "Food shop",
+    "shopId": "1"
+  },
+  {
+    "title": "Appliances shop",
+    "shopId": "2"
+  },
+  {
+    "title": "Tableware shop",
+    "shopId": "3"
+  },
+  {
+    "title": "Furniture shop",
+    "shopId": "4"
+  },
+  {
+    "title": "Automobiles shop",
+    "shopId": "5"
+  }
+]
