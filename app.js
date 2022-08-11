@@ -3,12 +3,9 @@ const logger = require('morgan');
 const cors = require('cors');
 require('dotenv').config();
 
-const { shopsRouter, productsRouter, ordersRouter } = require('./routes');
+const { WHITE_URL1, WHITE_URL2 } = process.env;
 
-const {
-  WHITE_URL1 = 'https://eliftech-school-delivery-app-eduard-konovka.netlify.app',
-  WHITE_URL2 = 'http://localhost:3000',
-} = process.env;
+const { shopsRouter, productsRouter, ordersRouter } = require('./routes');
 
 const server = express();
 
