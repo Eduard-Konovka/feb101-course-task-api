@@ -1,7 +1,7 @@
-const { shops } = require('../../models');
+const { shop } = require('../../models');
 
 const getListShops = async (req, res) => {
-  const result = await shops.listShops();
+  const result = await shop.listShops();
   res.json(result);
 };
 
