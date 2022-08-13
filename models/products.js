@@ -1,11 +1,11 @@
 const fs = require('fs/promises');
 const path = require('path');
 
-const db = path.join(__dirname, '../db/db.json');
+const db = path.join(__dirname, '../db/products.json');
 
 async function listProducts() {
   const data = await fs.readFile(db);
-  return JSON.parse(data).products;
+  return JSON.parse(data);
 }
 
 async function getProductById(id) {
