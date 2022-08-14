@@ -1,13 +1,24 @@
-const fs = require('fs/promises');
-const path = require('path');
+const { Schema, model } = require('mongoose');
 
-const db = path.join(__dirname, '../db/shops.json');
+const shopSchema = Schema(
+  {
+    title: {
+      type: String,
+      required: true,
+      minlength: 2,
+    },
 
-async function listShops() {
-  const data = await fs.readFile(db);
-  return JSON.parse(data);
-}
+    shopId: {
+      type: String,
+      required: true,
+    },
+  },
+
+  { versionKey: false, timestamps: true },
+);
+
+const Shop = model('shop', shopSchema);
 
 module.exports = {
-  listShops,
+  Shop,
 };

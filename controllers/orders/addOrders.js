@@ -1,6 +1,6 @@
-const createError = require('http-errors');
+// const createError = require('http-errors');
 
-const { order } = require('../../models');
+const { Order } = require('../../models');
 
 const addOrders = async (req, res) => {
   // const { error } = schema.validate(req.body);
@@ -9,7 +9,8 @@ const addOrders = async (req, res) => {
   //     message: `Missing required field: ${error.message}`,
   //   });
   // }
-  const result = await order.addOrder(req.body);
+  // const result = await addOrder(req.body);
+  const result = await Order.create(req.body);
   res.status(201).json(result);
 };
 

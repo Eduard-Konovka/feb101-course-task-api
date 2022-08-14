@@ -1,19 +1,46 @@
-const fs = require('fs/promises');
-const path = require('path');
+const { Schema, model } = require('mongoose');
 
-const db = path.join(__dirname, '../db/products.json');
+const productSchema = Schema(
+  {
+    imgUrl: {
+      type: String,
+    },
 
-async function listProducts() {
-  const data = await fs.readFile(db);
-  return JSON.parse(data);
-}
+    title: {
+      type: String,
+      required: true,
+      minlength: 2,
+    },
 
-async function getProductById(id) {
-  const products = await listProducts();
-  return products.find(product => product.id === id) || null;
-}
+    descr: {
+      type: String,
+      minlength: 2,
+      maxlength: 50,
+      required: true,
+    },
+
+    category: {
+      type: String,
+      required: true,
+    },
+
+    price: {
+      type: Number,
+      required: true,
+      min: 0.01,
+    },
+
+    shopId: {
+      type: String,
+      required: true,
+    },
+  },
+
+  { versionKey: false, timestamps: true },
+);
+
+const Product = model('product', productSchema);
 
 module.exports = {
-  listProducts,
-  getProductById,
+  Product,
 };

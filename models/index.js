@@ -1,9 +1,10 @@
-const order = require('./order');
-const product = require('./product');
-const shop = require('./shop');
+const { Shop } = require('./shop');
+const { Product } = require('./product');
+const { Order, joiSchema } = require('./order');
 
 module.exports = {
-  order,
-  product,
-  shop,
+  Shop,
+  Product,
+  Order,
+  joiSchema,
 };
