@@ -23,6 +23,7 @@ const corsOptions = {
 server.use(server.get('env') === 'development' ? cors() : cors(corsOptions));
 
 server.use(express.json());
+app.use(express.static('public'));
 
 server.use('/api/shops', shopsRouter);
 server.use('/api/products', productsRouter);
