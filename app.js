@@ -20,7 +20,8 @@ const corsOptions = {
       : callback(new Error('Not allowed by CORS'));
   },
 };
-server.use(server.get('env') === 'development' ? cors() : cors(corsOptions));
+// server.use(server.get('env') === 'development' ? cors() : cors(corsOptions));
+server.use(cors());
 
 server.use(express.json());
 server.use(express.static('public'));
