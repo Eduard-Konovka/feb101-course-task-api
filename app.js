@@ -10,7 +10,8 @@ const server = express();
 const formatsLogger = server.get('env') === 'development' ? 'dev' : 'short';
 server.use(logger(formatsLogger));
 
-const whitelist = [({ WHITE_URL1, WHITE_URL2 } = process.env)];
+const { WHITE_URL1, WHITE_URL2 } = process.env;
+const whitelist = [WHITE_URL1, WHITE_URL2];
 const corsOptions = {
   origin: (origin, callback) => {
     whitelist.includes(origin) || origin === undefined
