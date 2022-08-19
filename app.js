@@ -11,8 +11,15 @@ const formatsLogger = server.get('env') === 'development' ? 'dev' : 'short';
 server.use(logger(formatsLogger));
 
 const whitelist = [({ WHITE_URL1, WHITE_URL2 } = process.env)];
-const allowedServers = server.get('env') === 'development' ? '*' : whitelist;
-server.use(cors({ origin: allowedServers }));
+const corsOptions = {
+  origin: (origin, callback) => {
+    whitelist.includes(origin) || origin === undefined
+      ? callback(null, origin)
+      : callback(new Error('Not allowed by CORS'));
+  },
+};
+const allowedServers = server.get('env') === 'development' ? '*' : corsOptions;
+server.use(cors(allowedServers));
 
 server.use(express.json());
 server.use(express.static('public'));
