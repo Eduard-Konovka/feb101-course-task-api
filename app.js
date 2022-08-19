@@ -14,7 +14,7 @@ const whitelist = [({ WHITE_URL1, WHITE_URL2 } = process.env)];
 const corsOptions = {
   origin: (origin, callback) => {
     whitelist.includes(origin) || origin === undefined
-      ? callback(null, origin)
+      ? callback(null, true)
       : callback(new Error('Not allowed by CORS'));
   },
 };
