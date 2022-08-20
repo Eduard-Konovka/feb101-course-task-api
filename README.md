@@ -1,6 +1,6 @@
 # Web server for a application of a basic online store
 
-A Web server for a single-page web application of a simple online store that
+A web server for a single-page web application of a simple online store that
 allows you to select the necessary product from the proposed range in the right
 quantity with automatic calculation of the order amount.
 
