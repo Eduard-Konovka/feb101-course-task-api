@@ -47,6 +47,7 @@ object-like form, and formally look like an object.
   descr: "Product description",
   category: "1",
   price: 10,
+  available: 1,
   shopId: "1"
 }
 ```
@@ -65,6 +66,7 @@ object-like form, and formally look like an object.
       descr: "Product description 1.1",
       category: "1",
       price: 10,
+      available: 3,
       shopId: "1",
       qwantity: 1,
       cost: 10
@@ -76,6 +78,7 @@ object-like form, and formally look like an object.
       descr: "Product description 1.2",
       category: "5",
       price: 20,
+      available: 5,
       shopId: "1",
       qwantity: 3,
       cost: 60

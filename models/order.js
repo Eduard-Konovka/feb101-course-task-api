@@ -65,6 +65,13 @@ const orderSchema = Schema(
           type: String,
           required: true,
         },
+
+        available: {
+          type: Number,
+          required: true,
+          min: 1,
+        },
+
         qwantity: {
           type: Number,
           required: true,
@@ -119,6 +126,7 @@ const joiSchema = Joi.object({
       category: Joi.string().required(),
       price: Joi.number().min(0.01).required(),
       shopId: Joi.string().required(),
+      available: Joi.number().min(1).required(),
       qwantity: Joi.number().min(1).required(),
       cost: Joi.number().min(1).required(),
     }),

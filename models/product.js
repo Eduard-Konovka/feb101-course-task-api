@@ -30,6 +30,12 @@ const productSchema = Schema(
       min: 0.01,
     },
 
+    available: {
+      type: Number,
+      required: true,
+      min: 1,
+    },
+
     shopId: {
       type: String,
       required: true,
