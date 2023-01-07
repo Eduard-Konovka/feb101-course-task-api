@@ -1,9 +1,9 @@
 const orders = require('./orders');
-const products = require('./products');
+const books = require('./books');
 const shops = require('./shops');
 
 module.exports = {
   orders,
-  products,
+  books,
   shops,
 };

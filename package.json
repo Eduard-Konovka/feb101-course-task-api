@@ -1,26 +1,26 @@
 {
-  "name": "eliftech-school--delivery-app-api",
+  "name": "feb101-course-task-api",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "jest",
     "start": "cross-env NODE_ENV=production node ./bin/server.js",
     "dev": "cross-env NODE_ENV=development nodemon ./bin/server.js",
     "lint": "eslint **/*.js",
-    "lint:fix": "eslint --fix **/*.js"
+    "lint:fix": "eslint --fix **/*.js",
+    "deploy": "netlify deploy -p"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Eduard-Konovka/eliftech-school--delivery-app-api.git"
+    "url": "git+https://github.com/Eduard-Konovka/feb101-course-task-api.git"
   },
   "keywords": [],
   "author": "Eduard Konovka <ed098ua@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Eduard-Konovka/eliftech-school--delivery-app-api/issues"
+    "url": "https://github.com/Eduard-Konovka/feb101-course-task-api/issues"
   },
-  "homepage": "https://github.com/Eduard-Konovka/eliftech-school--delivery-app-api#readme",
   "dependencies": {
     "cors": "^2.8.5",
     "cross-env": "^7.0.3",
