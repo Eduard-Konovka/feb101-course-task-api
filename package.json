@@ -2,14 +2,13 @@
   "name": "feb101-course-task-api",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "./bin/server.js",
   "scripts": {
     "test": "jest",
     "start": "cross-env NODE_ENV=production node ./bin/server.js",
     "dev": "cross-env NODE_ENV=development nodemon ./bin/server.js",
     "lint": "eslint **/*.js",
-    "lint:fix": "eslint --fix **/*.js",
-    "deploy": "netlify deploy -p"
+    "lint:fix": "eslint --fix **/*.js"
   },
   "repository": {
     "type": "git",
