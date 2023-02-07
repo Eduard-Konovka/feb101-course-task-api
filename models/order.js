@@ -42,23 +42,12 @@ const orderSchema = Schema(
           required: true,
         },
 
-        imgUrl: {
-          type: String,
+        code: {
+          type: Number,
         },
 
-        title: {
+        author: {
           type: String,
-          required: true,
-        },
-
-        descr: {
-          type: String,
-          required: true,
-        },
-
-        category: {
-          type: String,
-          required: true,
         },
 
         price: {
@@ -67,32 +56,39 @@ const orderSchema = Schema(
           min: 0.01,
         },
 
-        available: {
-          type: Number,
-          required: true,
-          min: 1,
+        image: {
+          type: String,
         },
 
-        shopId: {
+        title: {
           type: String,
           required: true,
+          minlength: 2,
         },
 
-        qwantity: {
+        shortDescription: {
+          type: String,
+          minlength: 2,
+          maxlength: 250,
+          required: true,
+        },
+
+        description: {
+          type: String,
+          minlength: 2,
+          required: true,
+        },
+
+        count: {
           type: Number,
           required: true,
           min: 1,
-        },
-
-        cost: {
-          type: Number,
-          required: true,
-          min: 1,
+          max: 42,
         },
       },
     ],
 
-    totalPrice: {
+    totalCost: {
       type: Number,
       required: true,
       min: 0.01,
@@ -127,19 +123,18 @@ const joiSchema = Joi.object({
   cart: Joi.array().items(
     Joi.object({
       _id: Joi.string().required(),
-      imgUrl: Joi.string().allow('').required(),
-      title: Joi.string().required(),
-      descr: Joi.string().required(),
-      category: Joi.string().required(),
+      code: Joi.number().min(1).required(),
+      author: Joi.string().required(),
       price: Joi.number().min(0.01).required(),
-      available: Joi.number().min(1).required(),
-      shopId: Joi.string().required(),
-      qwantity: Joi.number().min(1).required(),
-      cost: Joi.number().min(1).required(),
+      image: Joi.string().allow('').required(),
+      title: Joi.string().required(),
+      shortDescription: Joi.string().required(),
+      description: Joi.string().required(),
+      count: Joi.number().min(1).max(42).required(),
     }),
   ),
 
-  totalPrice: Joi.number().min(0.01).required(),
+  totalCost: Joi.number().min(0.01).required(),
 });
 
 const Order = model('order', orderSchema);

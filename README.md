@@ -84,7 +84,7 @@ object-like form, and formally look like an object.
       cost: 60
     }
   ],
-  totalPrice: 70,
+  totalCost: 70,
   createdAt: "2022-08-19T21:16:17.294+00:00",
   updatedAt:"2022-08-19T21:16:17.294+00:00"
 }
