@@ -56,36 +56,40 @@ object-like form, and formally look like an object.
 
 ```js
 {
-  _id: "62fffda1ad5362d4afddc83d",
+  _id: "63e2c3bfcdd9f0008c1dafbb",
   user: { name: "aaa", email: "bbb@bbb.com", phone: "1234567", address: "ccc" },
   cart: [
     {
-      _id: "62fd6842378ee77a0e0493bf",
-      imgUrl: "berries.jpg",
-      title: "Berries",
-      descr: "Product description 1.1",
-      category: "1",
-      price: 10,
-      available: 3,
-      shopId: "1",
-      qwantity: 1,
-      cost: 10
+      _id: "63b8136ad53d7d45a37cfe0b",
+      code: 7,
+      author: 'Saleem Siddiqui',
+      price: 36.99,
+      image:
+        'https://courses.prometheus.org.ua/asset-v1:Ciklum+FEB101+2022_T3+type@asset+block@learning_test_driven_development.jpg',
+      title: 'Learning Test-Driven Development',
+      shortDescription:
+        'Your code is a testament to your skills as a developer. No matter what language you use, code should be clean, elegant, and uncluttered.',
+      description:
+        "Your code is a testament to your skills as a developer. No matter what language you use, code should be clean, elegant, and uncluttered. By using test-driven development (TDD), you'll write code that's easy to understand, retains its elegance, and works for months, even years, to come. With this indispensable guide, you'll learn how to use TDD with three different languages: Go, JavaScript, and Python. Author Saleem Siddiqui shows you how to tackle domain complexity using a unit test-driven approach. TDD partitions requirements into small, implementable features, enabling you to solve problems irrespective of the languages and frameworks you use. With Learning Test-Driven Development at your side, you'll learn how to incorporate TDD into your regular coding practice.",
+      count: 3,
     },
     {
-      _id: "62fd6842378ee77a0e0493c0",
-      imgUrl: "coffee.jpg",
-      title: "Coffee",
-      descr: "Product description 1.2",
-      category: "5",
-      price: 20,
-      available: 5,
-      shopId: "1",
-      qwantity: 3,
-      cost: 60
+      _id: "63b8136ad53d7d45a37cfe0b",
+      code: 3,
+      author: 'Adam D. Scott',
+      price: 8.99,
+      image:
+        'https://courses.prometheus.org.ua/asset-v1:Ciklum+FEB101+2022_T3+type@asset+block@javascript_everywhere.jpg',
+      title: 'JavaScript Everywhere',
+      shortDescription:
+        'JavaScript is the little scripting language that could. Once used chiefly to add interactivity to web browser windows, JavaScript is now a primary building block of powerful and robust applications.',
+      description:
+        'JavaScript is the little scripting language that could. Once used chiefly to add interactivity to web browser windows, JavaScript is now a primary building block of powerful and robust applications. In this practical book, new and experienced JavaScript developers will learn how to use this language to create APIs as well as web, mobile, and desktop applications. Author and engineering leader Adam D. Scott covers technologies such as Node.js, GraphQL, React, React Native, and Electron. Ideal for developers who want to build full stack applications and ambitious web development beginners looking to bootstrap a startup, this book shows you how to create a single CRUD-style application that will work across several platforms.',
+      count: 1,
     }
   ],
-  totalCost: 70,
-  createdAt: "2022-08-19T21:16:17.294+00:00",
-  updatedAt:"2022-08-19T21:16:17.294+00:00"
+  totalCost: 119.96,
+  createdAt: "2023-02-07T21:33:51.867+00:00",
+  updatedAt:"2023-02-07T21:33:51.867+00:00"
 }
 ```
