@@ -19,7 +19,7 @@ This app is built for the front end server at
 [https://feb101-course-task-eduard-konovka.netlify.app/](https://feb101-course-task-eduard-konovka.netlify.app/)
 
 - The `/api/shops` endpoint is used to get the list of stores
-- The `/api/products` endpoint is used to get the list of stores
+- The `/api/books` endpoint is used to get the list of stores
 - The `/api/orders` endpoint is used to send orders
 
 ### Data Information
@@ -37,18 +37,18 @@ object-like form, and formally look like an object.
 }
 ```
 
-- The product element looks like this:
+- The book element looks like this:
 
 ```js
 {
   _id: "62fd6842378ee79a0e0493bf",
-  imgUrl: "product.jpg",
-  title: "Product name",
-  descr: "Product description",
-  category: "1",
-  price: 10,
-  available: 1,
-  shopId: "1"
+  code: 1,
+  author: "FistName LastName",
+  price: 0.01,
+  image: "http://site.com/path/image.jpg"
+  title: "Book title",
+  shortDescription: "Short book description",
+  description: "Full book description",
 }
 ```
 
