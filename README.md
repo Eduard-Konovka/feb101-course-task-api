@@ -24,10 +24,10 @@ This app is built for the front end server at
 
 ### Data Information
 
-In the database, data about stores, products and orders are stored in an
-object-like form, and formally look like an object.
+In the database, data about users, books and orders are stored in an object-like
+form, and formally look like an object.
 
-- The shop element looks like this:
+- The user element looks like this:
 
 ```js
 {
