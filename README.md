@@ -42,7 +42,7 @@ object-like form, and formally look like an object.
 ```js
 {
   _id: "62fd6842378ee79a0e0493bf",
-  code: 1,
+  id: 1,
   author: "FistName LastName",
   price: 0.01,
   image: "http://site.com/path/image.jpg"
@@ -61,7 +61,7 @@ object-like form, and formally look like an object.
   cart: [
     {
       _id: "63b8136ad53d7d45a37cfe0b",
-      code: 7,
+      id: 7,
       author: 'Saleem Siddiqui',
       price: 36.99,
       image:
@@ -75,7 +75,7 @@ object-like form, and formally look like an object.
     },
     {
       _id: "63b8136ad53d7d45a37cfe0b",
-      code: 3,
+      id: 3,
       author: 'Adam D. Scott',
       price: 8.99,
       image:
