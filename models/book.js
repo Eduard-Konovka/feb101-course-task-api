@@ -2,7 +2,7 @@ const { Schema, model } = require('mongoose');
 
 const bookSchema = Schema(
   {
-    code: {
+    id: {
       type: Number,
     },
 

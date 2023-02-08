@@ -42,7 +42,7 @@ const orderSchema = Schema(
           required: true,
         },
 
-        code: {
+        id: {
           type: Number,
         },
 
@@ -123,7 +123,7 @@ const joiSchema = Joi.object({
   cart: Joi.array().items(
     Joi.object({
       _id: Joi.string().required(),
-      code: Joi.number().min(1).required(),
+      id: Joi.number().min(1).required(),
       author: Joi.string().required(),
       price: Joi.number().min(0.01).required(),
       image: Joi.string().allow('').required(),
