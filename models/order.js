@@ -69,7 +69,6 @@ const orderSchema = Schema(
         shortDescription: {
           type: String,
           minlength: 2,
-          maxlength: 250,
           required: true,
         },
 
