@@ -20,18 +20,15 @@ const orderSchema = Schema(
       email: {
         type: String,
         match: emailRegExp,
-        required: true,
       },
 
       phone: {
         type: String,
         match: phoneRegExp,
-        required: true,
       },
 
       address: {
         type: String,
-        required: true,
       },
     },
 
@@ -107,16 +104,13 @@ const joiSchema = Joi.object({
       .pattern(/.+@.+..+/i)
       .email({
         minDomainSegments: 2,
-      })
-      .required(),
+      }),
 
-    phone: Joi.string()
-      .pattern(
-        /^\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}$/,
-      )
-      .required(),
+    phone: Joi.string().pattern(
+      /^\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}$/,
+    ),
 
-    address: Joi.string().required(),
+    address: Joi.string(),
   }),
 
   cart: Joi.array().items(
