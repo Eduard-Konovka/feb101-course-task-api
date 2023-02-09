@@ -1,8 +1,8 @@
-# Web server for a application of a basic online store
+# Web server for a application of a book online store (course project)
 
-A web server for a single-page web application of a simple online store that
-allows you to select the necessary product from the proposed range in the right
-quantity with automatic calculation of the order amount.
+A web server for a single-page web application of an online bookstore that
+allows you to filter the selection of books with automatic calculation of the
+order amount.
 
 ## Description
 
@@ -18,24 +18,13 @@ The front end project is located
 This app is built for the front end server at
 [https://feb101-course-task-eduard-konovka.netlify.app/](https://feb101-course-task-eduard-konovka.netlify.app/)
 
-- The `/api/shops` endpoint is used to get the list of stores
-- The `/api/books` endpoint is used to get the list of stores
+- The `/api/books` endpoint is used to get the list of books
 - The `/api/orders` endpoint is used to send orders
 
 ### Data Information
 
 In the database, data about users, books and orders are stored in an object-like
 form, and formally look like an object.
-
-- The user element looks like this:
-
-```js
-{
-  _id: "62f93e03376ee77a0e04939d",
-  title: "Shop name",
-  shopId: "1"
-}
-```
 
 - The book element looks like this:
 
@@ -91,5 +80,15 @@ form, and formally look like an object.
   totalCost: 119.96,
   createdAt: "2023-02-07T21:33:51.867+00:00",
   updatedAt:"2023-02-07T21:33:51.867+00:00"
+}
+```
+
+- - User information can be limited to only the name:
+
+```js
+{
+  // ...
+  user: { name: "aaa" },
+  // ...
 }
 ```
