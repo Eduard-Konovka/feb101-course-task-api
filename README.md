@@ -83,11 +83,7 @@ form, and formally look like an object.
 }
 ```
 
-- - User information can be limited to only the name:
-
-* User information can be limited to only the name:
-
-* - User information can be limited to only the name:
+> User information can be limited to only the name:
 
 ```js
 {
