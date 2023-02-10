@@ -34,7 +34,7 @@ form, and formally look like an object.
   id: 1,
   author: "FistName LastName",
   price: 0.01,
-  image: "http://site.com/path/image.jpg"
+  image: "http://site.com/path/image.jpg",
   title: "Book title",
   shortDescription: "Short book description",
   description: "Full book description",
@@ -75,11 +75,11 @@ form, and formally look like an object.
       description:
         'JavaScript is the little scripting language that could. Once used chiefly to add interactivity to web browser windows, JavaScript is now a primary building block of powerful and robust applications. In this practical book, new and experienced JavaScript developers will learn how to use this language to create APIs as well as web, mobile, and desktop applications. Author and engineering leader Adam D. Scott covers technologies such as Node.js, GraphQL, React, React Native, and Electron. Ideal for developers who want to build full stack applications and ambitious web development beginners looking to bootstrap a startup, this book shows you how to create a single CRUD-style application that will work across several platforms.',
       count: 1,
-    }
+    },
   ],
   totalCost: 119.96,
   createdAt: "2023-02-07T21:33:51.867+00:00",
-  updatedAt:"2023-02-07T21:33:51.867+00:00"
+  updatedAt:"2023-02-07T21:33:51.867+00:00",
 }
 ```
 
