@@ -6,6 +6,6 @@ const { ctrlWrapper } = require('../middlewares');
 const { books: ctrl } = require('../controllers');
 
 router.get('/', ctrlWrapper(ctrl.getListBooks));
-router.get('/id', ctrlWrapper(ctrl.getBookById));
+router.get('/check', ctrlWrapper(ctrl.getBookById));
 
 module.exports = router;
